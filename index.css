@@ -1,0 +1,46 @@
+body {
+    background-image: url("https://specials-images.forbesimg.com/dam/imageserve/765877054/960x0.jpg?fit=scale");
+    background-size: cover;
+    background-position: center;
+}
+
+.box{
+    margin-top: 100px;
+    margin-left: 200px;
+    width:50%;
+    background-color:#b773e3;
+    color:white;
+    padding: 4px;
+    border-radius:4px 4px 4px 4px;
+}
+.box h2 {
+  margin: -4px;
+  background-color:purple;
+  text-align:center;
+  padding:4px;
+  border-radius: 4px 4px 0 0;
+}
+
+.navbar ul {
+    position:absolute;
+    top:25px;
+    width:100%;
+    background-color:#3b72cc;
+    list-style-type: none;
+    margin-top :40px
+}
+.navbar li a{
+    background-color:#0c0c0c;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color:white;
+    float: left;
+    text-decoration:none;
+    border-radius: 6px 6px 0px 0px;
+    width: 8%;
+    margin-right:20px;
+    padding-left:6px;
+    padding-right:6px;
+}
+.navbar li a:active {
+    background:white;
+}
