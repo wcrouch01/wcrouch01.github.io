@@ -1,6 +1,0 @@
-This code was written at MVCode - www.mvcode.com
-Some repos may be blank if you didn't have any code.
-Repo Name: Portfolio_Lesson copy
-Repo Type: html
-Repo URL: https://www.mvcodeclub.com/repos/46290
-Student Lesson: https://www.mvcodeclub.com/student_lessons/124136
