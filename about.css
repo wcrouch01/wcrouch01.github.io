@@ -33,8 +33,9 @@ body {
     padding:4px;
 }
 .game{
-    margin-left: 150px;
-    margin-top: 100px;
+    margin-left: 300px;
+    margin-top: 50px;
 }
 .instructions{
-    font-color:white;
+    background-color:#ffffff;
+}
