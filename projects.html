@@ -8,6 +8,9 @@
         <a href = "index.html" > Back to Home </a>
         </div>
         <div class = "game">
+                <p> Use the Mouse to move your player </p>
+                <p> Avoid Enemies for as long as you can </p>
+                <p> Press spacebar to reset
         <canvas id = "myCanvas" ></canvas>
 
         <script>
@@ -238,7 +241,7 @@ var decidePosition = function(obj1)
 }
 var keyPressed = function()
 {
-  if(keyCode === RIGHT && !playing){
+  if(keyCode === 32 && !playing){
     playing = true;
     enemy = [];
     gameTime = 0;
