@@ -34,7 +34,7 @@ body {
 }
 .game{
     margin-left: 150px;
-    margin-top: 60px;
+    margin-top: 100px;
 }
 .instructions{
-    color:white;
+    font-color:white;
