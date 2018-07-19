@@ -48,9 +48,10 @@ var draw = function() {
   }
   else{
      
-    background(200,200,200)
-     fill(0,0,0);
-  text("Score = " + floor(gameTime/60), 380, 30)
+    image(space);
+     fill(255,255,255);
+     textSize(50);
+  text("Score = " + floor(gameTime/60), 350, 400);
     runLose();
   }
 };
@@ -65,7 +66,7 @@ var runGame = function()
   //background(200,200,200);
   image(space);
   drawPlayer();
-  fill(0,0,0);
+  fill(255,255,255);
   textSize(20);
   text("Score = " + floor(gameTime/60), 380, 30)
   trueMouseX = mouseX
