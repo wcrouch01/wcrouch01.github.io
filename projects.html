@@ -51,7 +51,7 @@ var draw = function() {
     image(space);
      fill(255,255,255);
      textSize(50);
-  text("Score = " + floor(gameTime/60), 350, 400);
+  text("Score = " + floor(gameTime/60), 300, 400);
     runLose();
   }
 };
@@ -68,7 +68,7 @@ var runGame = function()
   drawPlayer();
   fill(255,255,255);
   textSize(20);
-  text("Score = " + floor(gameTime/60), 380, 30)
+  text("Score = " + floor(gameTime/60), 300, 40)
   trueMouseX = mouseX
   trueMouseY =  mouseY
   movePlayer();
