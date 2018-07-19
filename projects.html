@@ -153,6 +153,9 @@ var runGame = function()
  
   }
   );
+  //increment clocks
+  gameTime++;
+  spawnTime++;
   //summon a boss every 60 seconds
   if((gameTime/60) % 5 === 0)
   {
@@ -169,8 +172,7 @@ var runGame = function()
     };
     enemy.push(boss);
   }
-  gameTime++;
-  spawnTime++;
+  
   spawnMax = 250 - floor(gameTime / 300);
   if(spawnMax < 60)
   {
