@@ -43,13 +43,15 @@ var draw = function() {
   runGame();
   }
   else{
+    background(200,200,200)
+  text("Score = " + floor(gameTime/60), 380, 30)
     runLose();
   }
 };
 
 //functions//
 var runLose = function(){
-  background(200,200,200)
+  
 }
 var runGame = function()
 {
