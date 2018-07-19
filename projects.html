@@ -37,13 +37,18 @@ var player = {
   
 }
 var playing = false;
+var clear = false;
 //draw function //
 var draw = function() {
   if(playing){
   runGame();
   }
   else{
+     if(!clear)
+     {
     background(200,200,200)
+     clear = true;
+     }
   text("Score = " + floor(gameTime/60), 380, 30)
     runLose();
   }
