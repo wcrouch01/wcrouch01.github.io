@@ -28,7 +28,7 @@ var trueMouseX;
 var trueMouseY;
 var gameTime = 0;
 var spawnTime = 0;
-var space = loadImage(space.jpg);
+var space;
 var enemy = [];
 var player = {
   xpos: 250,
@@ -184,6 +184,7 @@ var purpleDetonate = function(current){
 
 var setup = function() {
   size(800,800);
+  space = loadImage("space.jpg");
 }
 var createEnemy = function(obj1)
 {
