@@ -35,7 +35,7 @@ var player = {
   color: color(255,0,0)
   
 }
-var playing = true;
+var playing = false;
 //draw function //
 var draw = function() {
   if(playing){
@@ -285,7 +285,7 @@ var decidePosition = function(obj1)
 }
 var keyPressed = function()
 {
-  if(keyCode === RIGHT && !playing){
+  if(keyCode === 32 && !playing){
     playing = true;
     enemy = [];
     gameTime = 0;
