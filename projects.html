@@ -94,6 +94,36 @@ var runGame = function()
     ||current.xpos > 1200 || current.xpos < -800){
       createEnemy(current);
     }
+  //boss
+  if(current.type === "boss")
+  {
+    if(current.xpos > 900)
+    {
+      current.type = "dead";
+    }
+    current.pcount++;
+    //wait until it is on screen
+    if(current.pcount > 100)
+    {
+      if(current.pcount >= 160){
+        for(var i = 0; i < 3; i++){
+        var babyboss = {
+      xpos: current.xpos,
+      ypos: current.ypos,
+      size: 15,
+      xspeed: random(-5,5),
+      yspeed: random(-5,5),
+      color: color(232, 155, 55),
+      type: "babyboss",
+      pcount: 0
+
+    };
+    enemy.push(babyboss);
+      }
+      current.pcount = 100;
+      }
+    }
+  }
   //purple detonation
   if(current.type === "purple")
   {
@@ -123,6 +153,22 @@ var runGame = function()
  
   }
   );
+  //summon a boss every 60 seconds
+  if((gameTime/60) % 60 === 0)
+  {
+    var boss = {
+      xpos: -100,
+      ypos: 250,
+      size: 50,
+      xspeed: 2,
+      yspeed: random(-0.5,0.5),
+      color: color(232, 155, 55),
+      type: "boss",
+      pcount: 0
+      
+    };
+    enemy.push(boss);
+  }
   gameTime++;
   spawnTime++;
   spawnMax = 250 - floor(gameTime / 300);
