@@ -21,6 +21,8 @@
     var sketchProc = function(p) {
         with (p) {
            
+//variables //
+
 var trueMouseX;
 var trueMouseY;
 var gameTime = 0;
@@ -53,9 +55,10 @@ var runGame = function()
   background(200,200,200);
   drawPlayer();
   fill(0,0,0);
-  text("Score = " + floor(gameTime/100), 220, 10)
-  trueMouseX = mouseX //* ratio;
-  trueMouseY =  mouseY //* ratio;
+  textSize(20);
+  text("Score = " + floor(gameTime/100), 380, 30)
+  trueMouseX = mouseX
+  trueMouseY =  mouseY
   movePlayer();
   enemy.forEach(function(current) {
   if(current.type === "dead")
@@ -68,15 +71,15 @@ var runGame = function()
   
   current.ypos += current.yspeed;
   current.xpos += current.xspeed;
-  if(current.ypos > 1000 || current.ypos < -500
-    ||current.xpos > 1000 || current.xpos < -500){
+  if(current.ypos > 1200 || current.ypos < -800
+    ||current.xpos > 1200 || current.xpos < -800){
       createEnemy(current);
     }
   //purple detonation
   if(current.type === "purple")
   {
     current.pcount++;
-    if(current.pcount > 250)
+    if(current.pcount > 220)
     {
       purpleDetonate(current);
     }
@@ -86,7 +89,7 @@ var runGame = function()
     current.pcount++;
     if(current.pcount > 150)
     {
-      current.color = color(0,0,0);
+      current.color = color(255,0,200);
     }
     if(current.pcount > 160)
     {
@@ -106,8 +109,8 @@ var runGame = function()
   if(spawnTime > 300)
   {
     var newEnemy = {
-      xpos: 0,
-      ypos: 0,
+      xpos: -100,
+      ypos: -100,
       size: random(10, 20),
       xspeed: random(2, 8),
       yspeed: random(2,8),
@@ -164,7 +167,7 @@ var purpleDetonate = function(current){
 }
 
 var setup = function() {
-  size(500,500);
+  size(800,800);
 }
 var createEnemy = function(obj1)
 {
@@ -221,40 +224,74 @@ var createEnemy = function(obj1)
 var decidePosition = function(obj1)
 {
   //decide xpos
-  if(random(1,3) < 2)
-  {
-    obj1.xpos = random(-200,0);
+  var pos = random(0,8);
+  //left of screen
+  if(pos < 1){
+    obj1.xpos = random(-150,-50);
+    obj1.ypos = random(100,700);
     obj1.xspeed = 4;
+    obj1.yspeed = random(-1,1);
   }
-  else
-  {
-    obj1.xpos = random(500,700);
+  //left of screen, beneath screen
+   if(pos > 1 && pos < 2){
+    obj1.xpos = random(-150,-50);
+    obj1.ypos = random(850,1000);
+    obj1.xspeed = random(3,5);
+    obj1.yspeed = random(-3,-5);
+  }
+  //bottom of screen
+  if(pos > 2 && pos < 3){
+    obj1.xpos = random(100,700);
+    obj1.ypos = random(850,1000);
+    obj1.xspeed = random(-1,1);
+    obj1.yspeed = -4;
+  }
+  //right of screen, beneath
+  if(pos > 3 && pos < 4){
+    obj1.xpos = random(850,1000);
+    obj1.ypos = random(850,1000);
+    obj1.xspeed = random(-3,-5);
+    obj1.yspeed = random(-3,-5);
+  }
+  //right of screen
+  if(pos > 4 && pos < 5){
+    obj1.xpos = random(850,1000);
+    obj1.ypos = random(100,700);
     obj1.xspeed = -4;
+    obj1.yspeed = random(-1,1);
   }
-  if(random(1,3) < 2)
-  {
-    obj1.ypos = random(-200,0);
+  //right of screen, above screen
+  if(pos > 5 && pos < 6){
+    obj1.xpos = random(850,1000);
+    obj1.ypos = random(-50,-150);
+    obj1.xspeed = random(-3,-5);
+    obj1.yspeed = random(3,5);
+  }
+  //above screen
+  if(pos > 6 && pos < 7){
+    obj1.xpos = random(100,700);
+    obj1.ypos = random(-50,-150);
+    obj1.xspeed = random(-1,1);
     obj1.yspeed = 4;
   }
-  else
-  {
-    obj1.ypos = random(500,700);
-    obj1.yspeed = -4;
+  //left of screen, above screen
+  //right of screen, above screen
+  if(pos > 7 && pos < 8){
+    obj1.xpos = random(-50,-150);
+    obj1.ypos = random(-50,-150);
+    obj1.xspeed = random(3,5);
+    obj1.yspeed = random(3,5);
   }
 }
 var keyPressed = function()
 {
-  if(keyCode === 32 && !playing){
+  if(keyCode === RIGHT && !playing){
     playing = true;
     enemy = [];
     gameTime = 0;
     spawnTime = 0;
   }
 }
-
-
-
-
         }
     }
 
