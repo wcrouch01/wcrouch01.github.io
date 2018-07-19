@@ -172,7 +172,7 @@ var runGame = function()
   gameTime++;
   spawnTime++;
   //summon a boss every 60 seconds
-  if((gameTime/60) % 5 === 0)
+  if((gameTime/60) % 60 === 0)
   {
     var boss = {
       xpos: -100,
