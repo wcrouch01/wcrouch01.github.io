@@ -38,17 +38,17 @@ var player = {
 }
 var playing = false;
 var clear = false;
+var spawnMax = 250;
+              
 //draw function //
 var draw = function() {
   if(playing){
   runGame();
   }
   else{
-     if(!clear)
-     {
+     
     background(200,200,200)
-     clear = true;
-     }
+     fill(0,0,0);
   text("Score = " + floor(gameTime/60), 380, 30)
     runLose();
   }
@@ -114,7 +114,12 @@ var runGame = function()
   );
   gameTime++;
   spawnTime++;
-  if(spawnTime > 300)
+  spawnMax = 250 - floor(gameTime / 300);
+  if(spawnMax < 60)
+  {
+          spawnMax = 60;
+  }
+  if(spawnTime > spawnMax)
   {
     var newEnemy = {
       xpos: -100,
