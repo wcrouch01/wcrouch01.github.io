@@ -23,13 +23,14 @@
         with (p) {
            
 //variables //
-
+	
+import processing.sound.*import p;
+SoundFile file;
 var trueMouseX;
 var trueMouseY;
 var gameTime = 0;
 var spawnTime = 0;
 var space;
-var myMusic;
 var enemy = [];
 var player = {
   xpos: 250,
@@ -187,7 +188,7 @@ var purpleDetonate = function(current){
 var setup = function() {
   size(800,800);
   space = loadImage("space.jpg");
-  myMusic = new sound("song.mp3");
+  file = new SoundFile(this, "sample.mp3");
 }
 var createEnemy = function(obj1)
 {
@@ -311,7 +312,7 @@ var keyPressed = function()
     gameTime = 0;
     spawnTime = 0;
     cleared = false;
-    myMusic.play();
+    file.play();
   }
 }
         }
