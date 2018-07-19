@@ -105,14 +105,14 @@ var runGame = function()
     //wait until it is on screen
     if(current.pcount > 100)
     {
-      if(current.pcount >= 160){
-        for(var i = 0; i < 3; i++){
+      if(current.pcount >= 130){
+        for(var i = 0; i < 4; i++){
         var babyboss = {
       xpos: current.xpos,
       ypos: current.ypos,
       size: 15,
-      xspeed: random(-5,5),
-      yspeed: random(-5,5),
+      xspeed: random(-6,6),
+      yspeed: random(-6,6),
       color: color(232, 155, 55),
       type: "babyboss",
       pcount: 0
