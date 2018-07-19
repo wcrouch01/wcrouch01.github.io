@@ -90,10 +90,13 @@ var runGame = function()
   
   current.ypos += current.yspeed;
   current.xpos += current.xspeed;
-  if(current.ypos > 1200 || current.ypos < -800
-    ||current.xpos > 1200 || current.xpos < -800){
+  if(current.type != "babyboss" && current.type != "babyPurple"){
+	  
+  if(current.ypos > 1200 || current.ypos < -600
+    ||current.xpos > 1200 || current.xpos < -600){
       createEnemy(current);
     }
+  }
   //cleaning up baby bosses
 	 
   if(current.type === "babyboss"){
