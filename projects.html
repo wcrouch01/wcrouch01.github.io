@@ -9,11 +9,11 @@
         <a href = "index.html" > Back to Home </a>
         </div>
         <div class = "box">
-                <h2> instructions </h2>
+                <h2> Instructions </h2>
                 <p> Use the Mouse to move your player </p>
                 <p> Avoid Enemies for as long as you can </p>
                 <p> Press spacebar to reset
-		<p> Press the sound button for music (it loops)<p>
+		<p> Press the sound button for music (Loops)<p>
 	        <audio controls loop>
 			<source src="song.mp3" type="audio/mpeg">
 		</audio>
@@ -94,7 +94,15 @@ var runGame = function()
     ||current.xpos > 1200 || current.xpos < -800){
       createEnemy(current);
     }
-  //boss
+  //cleaning up baby bosses
+  if(current.type === "babyboss"){
+	  pcount++;
+	  if(pcount > 300)
+	  {
+	     current.type = "dead";
+	  }
+  }
+  //boss	  
   if(current.type === "boss")
   {
     if(current.xpos > 900)
