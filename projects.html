@@ -28,6 +28,7 @@ var trueMouseX;
 var trueMouseY;
 var gameTime = 0;
 var spawnTime = 0;
+var space = loadImage(space.jpg);
 var enemy = [];
 var player = {
   xpos: 250,
@@ -60,7 +61,9 @@ var runLose = function(){
 }
 var runGame = function()
 {
-  background(200,200,200);
+  
+  //background(200,200,200);
+  image(space);
   drawPlayer();
   fill(0,0,0);
   textSize(20);
