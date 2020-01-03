@@ -145,6 +145,12 @@ html, body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.container .main-content .code-text {
+  height: 100%;
+  width: 80%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 /* line 131, ../sass/main.scss */
 .container .main-content .work {
   padding-top: 30px;
